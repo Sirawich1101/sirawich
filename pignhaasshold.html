@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Message</title>
+  <style>
+    body {
+      background-color: pink;
+      text-align: center;
+    }
+    #message {
+      font-size: 24px;
+      margin-top: 50px;
+      display: none;
+      transition: font-size 3s;
+    }
+    .heart {
+      color: red;
+    }
+    #buttons {
+      margin-top: 20px;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button id="showMessageBtn">ลองกดดูสิครับหมูอังปังหน่า</button>
+  <div id="message"></div>
+  <div id="buttons" style="display: none;">
+    <button id="loveBomBtn">รักบอมค้าบบบ</button>
+    <button id="dontLoveBtn">ไม่รักหรอกงอนแล่ว</button>
+  </div>
+
+  <script>
+    document.getElementById('showMessageBtn').addEventListener('click', function() {
+      var messageDiv = document.getElementById('message');
+      messageDiv.innerHTML = 'Bom loves Noynha very much na rak fan mak mak EiEi';
+      messageDiv.style.display = 'block';
+      this.style.display = 'none';
+      createFireworks();
+      setTimeout(function() {
+        messageDiv.innerHTML = 'หมูหน่ารักบอมไหม';
+        document.getElementById('buttons').style.display = 'block';
+      }, 2000);
+    });
+
+    document.getElementById('loveBomBtn').addEventListener('click', function() {
+      var messageDiv = document.getElementById('message');
+      messageDiv.innerHTML = 'อัยย้ะๆ';
+      document.getElementById('buttons').style.display = 'none';
+    });
+
+    document.getElementById('dontLoveBtn').addEventListener('click', function() {
+      var messageDiv = document.getElementById('message');
+      messageDiv.innerHTML = 'ละมึง ค ไร .';
+      messageDiv.style.fontSize = '50px'; // Increase font size
+      setTimeout(function() {
+        messageDiv.innerHTML = 'อูยหยอกๆ';
+        setTimeout(function() {
+          messageDiv.innerHTML = 'รักหน่าน้าาาาาา';
+        }, 3000);
+      }, 3000);
+      document.getElementById('buttons').style.display = 'none';
+    });
+
+    function createFireworks() {
+      // Implement fireworks animation here
+      // For simplicity, I'll just log a message
+      console.log('Fireworks created!');
+    }
+  </script>
+</body>
+</html>
